@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Absensi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loginView" class="container small">
+  <div class="card">
+    <h1>Login Admin</h1>
+    <form id="loginForm">
+      <label>Email</label>
+      <input id="email" type="email" required placeholder="admin@email.com">
+      <label>Password</label>
+      <input id="password" type="password" required>
+      <button>Login</button>
+      <div id="loginMessage"></div>
+    </form>
+  </div>
+</div>
+
+<div id="adminView" class="container wide hidden">
+  <header class="topbar">
+    <div><h1>Dashboard Absensi</h1><p id="today"></p></div>
+    <button id="logout" class="secondary">Keluar</button>
+  </header>
+
+  <section class="stats">
+    <div class="stat"><span>Total</span><strong id="total">0</strong></div>
+    <div class="stat"><span>Hadir</span><strong id="present">0</strong></div>
+    <div class="stat"><span>Izin</span><strong id="permit">0</strong></div>
+    <div class="stat"><span>Sakit</span><strong id="sick">0</strong></div>
+    <div class="stat"><span>Alpa</span><strong id="absent">0</strong></div>
+  </section>
+
+  <section class="card">
+    <div class="toolbar">
+      <input id="dateFilter" type="date">
+      <select id="statusFilter">
+        <option value="">Semua status</option>
+        <option>Hadir</option><option>Izin</option><option>Sakit</option><option>Alpa</option>
+      </select>
+      <input id="search" placeholder="Cari nama / NIK / kelas">
+      <button id="refresh">Refresh</button>
+      <button id="export" class="secondary">Export CSV</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Waktu</th><th>Nama</th><th>NIK/NIS</th><th>Kelas/Divisi</th>
+          <th>Status</th><th>Keterangan</th><th>Aksi</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p id="tableMessage"></p>
+  </section>
+</div>
+
+<script src="config.js"></script>
+<script type="module" src="admin.js"></script>
+</body>
+</html>

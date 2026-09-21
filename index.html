@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Absensi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div class="card hero">
+    <h1>Absensi</h1>
+    <p>Silakan isi data absensi Anda.</p>
+  </div>
+
+  <form id="attendanceForm" class="card">
+    <label>Nama</label>
+    <input id="name" required placeholder="Nama lengkap">
+
+    <label>NIK / NIS</label>
+    <input id="identity" required placeholder="NIK atau NIS">
+
+    <label>Kelas / Divisi</label>
+    <input id="group" required placeholder="Kelas atau divisi">
+
+    <label>Status</label>
+    <select id="status" required>
+      <option value="Hadir">Hadir</option>
+      <option value="Izin">Izin</option>
+      <option value="Sakit">Sakit</option>
+      <option value="Alpa">Alpa</option>
+    </select>
+
+    <label>Keterangan</label>
+    <textarea id="note" rows="3" placeholder="Opsional"></textarea>
+
+    <button type="submit">Kirim Absensi</button>
+    <div id="message"></div>
+  </form>
+</div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
